@@ -1,0 +1,12 @@
+{
+    "name": "dz-sdk",
+    "version": "1.0.0",
+    "dependencies": {
+        "angular": "latest",
+        "angular-route": "latest",
+        "angular-resource": "latest",
+        "angular-animate": "latest",
+        "animate.css": "latest",
+        "dz-assets": "<=1.4.0"
+    }
+}
