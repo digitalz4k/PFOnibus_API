@@ -1,0 +1,7 @@
+nav.tab-bar
+    section.left-small
+        a.left-off-canvas-toggle.menu-icon
+            span
+    section.right.tab-bar-section
+        h1.title(ng-hide="currentUser") Starter Development Kit
+        h1.title(ng-show='currentUser') {{ currentUser.name }}
