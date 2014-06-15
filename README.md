@@ -27,9 +27,9 @@ My Starterkit uses a lot of tools:
 
 ![Alt text](http://imageshack.com/a/img843/9328/emdg.png?raw=true "Optional Title")
 
-![Alt text](http://imageshack.com/a/img841/7867/ykqr.png?raw=true "Optional Title")
-
 ![Alt text](http://imageshack.com/a/img849/6438/7qeb.png?raw=true "Optional Title")
+
+![Alt text](http://imageshack.com/a/img841/7867/ykqr.png?raw=true "Optional Title")
 
 ##Quick start
 
