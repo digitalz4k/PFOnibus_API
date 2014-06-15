@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'public/css/app.css': 'public/libs/dz-assets/scss/sdk.scss'
+          'app/css/app.css': 'app/libs/dz-assets/scss/sdk.scss'
         }
       },
       dist: {
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'public/css/app.css': 'public/libs/dz-assets/scss/sdk.scss'
+          'app/css/app.css': 'app/libs/dz-assets/scss/sdk.scss'
         }
       }
     },
@@ -24,15 +24,15 @@ module.exports = function(grunt) {
     cssmin: {
       dev: {
         files: {
-          'public/css/app.min.css': [
-            'public/css/app.css'
+          'app/css/app.min.css': [
+            'app/css/app.css'
           ]
         }
       },
       dist: {
         files: {
-          'public/css/app.min.css': [
-            'public/css/style.css'
+          'app/css/app.min.css': [
+            'app/css/style.css'
           ]
         }
       }
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: 'public/libs/dz-assets/scss/{,*/}*.{scss,sass}',
+        files: 'app/libs/dz-assets/scss/{,*/}*.{scss,sass}',
         tasks: ['sass:dev', 'cssmin:dev'],
         options: { livereload: true }
       }

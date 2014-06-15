@@ -1,19 +1,38 @@
-// set variables for environment
+'use strict';
+
+// Server Setup ====================================================================
 var express = require('express'),
             app = express(),
-            path = require('path');
+            port    = process.env.PORT || 3000,
+            path = require('path'),
+            http    = require('http'),
+    fs = require('fs'),
+    mongoose = require('mongoose');
 
-// views as directory for all template files
-app.set('views', path.join(__dirname, 'public/views'));
-app.set('view engine', 'jade');
+// Database Configuration =============================================================
+var config = require('./server/config/config');
+var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
-app.use(express.static('public'));
-
-// set routes
-app.get('/', function(req, res) {
-  res.render('index', { title: 'The index page!' })
+var modelsPath = path.join(__dirname, 'server/models');
+fs.readdirSync(modelsPath).forEach(function (file) {
+  if (/(.*)\.(js$|coffee$)/.test(file)) {
+    require(modelsPath + '/' + file);
+  }
 });
 
-// Set server port
-app.listen(4000);
-console.log('server is running');
+// Passport Configuration ==============================================================
+var passport = require('./server/config/passport');
+
+// Express Configuration ===============================================================
+var app = express();
+require('./server/config/express')(app);
+require('./server/routes/routes')(app);
+
+
+// Launch server ====================================================================
+app.listen(config.port, config.ip, function () {
+  console.log('Client and Web API server launched on %s:%d', config.ip, config.port);
+});
+
+// Expose ==========================================================================
+exports = module.exports = app;
