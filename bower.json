@@ -9,6 +9,6 @@
         "angular-cookies": "latest",
         "angular-sanitize": "latest",
         "animate.css": "latest",
-        "dz-assets": "<=1.4.0"
+        "dz-assets": "latest"
     }
 }

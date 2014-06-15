@@ -1,0 +1,13 @@
+git clone https://github.com/digitalz4k/dz-starterkit.git DIRNAME
+
+cd DIRNAME
+
+npm install
+
+open new terminal
+
+bower install
+
+npm start
+
+browser: localhost:3000
