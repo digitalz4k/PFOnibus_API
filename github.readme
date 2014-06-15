@@ -1,13 +1,16 @@
-git clone https://github.com/digitalz4k/dz-starterkit.git DIRNAME
+Download the starterkit
+> git clone https://github.com/digitalz4k/dz-starterkit.git starterkit
 
-cd DIRNAME
+Go to the install directory
+> cd starterkit
 
-npm install
+Install NPM dependencies & assets packages
+> npm install
+
+Create styles assets and watch command
+> grunt
 
 open new terminal
+> npm start
 
-bower install
-
-npm start
-
-browser: localhost:3000
+Run browser 'http://localhost:3000/'

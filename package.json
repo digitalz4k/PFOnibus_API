@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/nodemon server.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "node node_modules/bower/bin/bower install"
   },
   "author": "Leonardo da Silva",
   "dependencies": {
