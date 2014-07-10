@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
   .factory('Session', function ($resource) {
     return $resource('/api/v1/session/');
   });

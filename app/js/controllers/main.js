@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
     .controller('MainCtrl', function ($scope, User) {
         $scope.brand = "Digitalz";
         $scope.userId = User.id;

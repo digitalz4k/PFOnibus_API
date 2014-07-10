@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

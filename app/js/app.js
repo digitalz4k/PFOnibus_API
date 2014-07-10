@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp', [
+angular.module('pfoApp', [
   'ngCookies',
   'ngRoute',
   'ngAnimate',
@@ -25,11 +25,6 @@ angular.module('sdkApp', [
       when('/settings', {
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
-        authenticate: true
-      }).
-      when('/todos/', {
-        templateUrl: 'partials/todo',
-        controller: 'TodoCtrl',
         authenticate: true
       }).
       otherwise({

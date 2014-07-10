@@ -2,6 +2,6 @@
 
 module.exports = {
   mongo: {
-    uri: 'mongodb://localhost/sdk-dev'
+    uri: 'mongodb://localhost/pfonibus'
   }
 };

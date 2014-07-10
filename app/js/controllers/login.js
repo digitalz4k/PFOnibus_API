@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
   .controller('LoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
     .factory('Api', ['$resource', function($resource){
         return {
             Feature: $resource('features/:featureId.json', {}, {

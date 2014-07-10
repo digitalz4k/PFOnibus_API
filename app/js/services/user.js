@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
   .factory('User', function ($resource) {
     return $resource('/api/v1/users/:id', {
       id: '@id'

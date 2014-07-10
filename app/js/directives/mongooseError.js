@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sdkApp')
+angular.module('pfoApp')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',
