@@ -1,9 +1,9 @@
 {
-  "name": "dz-sdk",
+  "name": "pfobeta",
   "version": "1.0.0",
-  "description": "\"Starter Kit for NodeJS by Digitalz.\"",
+  "description": "\"PFOnibus Beta by Digitalz.\"",
   "main": "server.js",
-  "private": false,
+  "private": true,
   "engines": {
     "node": "0.10.x",
     "npm": "1.2.x"
