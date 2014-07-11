@@ -7263,6 +7263,9 @@ header .content .form h3 {
   padding: 2.4em 0;
   border-top: 5px solid #33cc33;
 }
+.info .contato button {
+  background: #33cc33;
+}
 .info .contato a {
   color: #fff;
 }
