@@ -7214,6 +7214,9 @@ header .content .form h3 {
 #usar .etapas h2, #usar .etapas h5 {
   color: #33cc33;
 }
+#usar .etapas h2 {
+  padding-bottom: 1.2em;
+}
 #usar .funcionalidade {
   background: black;
   border-bottom: 5px solid #fff;
@@ -7258,6 +7261,7 @@ header .content .form h3 {
 }
 .info .sistemas h2 {
   color: #fff;
+  padding-bottom: 1.2em;
 }
 .info .contato {
   padding: 2.4em 0;
