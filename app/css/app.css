@@ -7263,6 +7263,9 @@ header .content .form h3 {
   padding: 2.4em 0;
   border-top: 5px solid #33cc33;
 }
+.info .contato p {
+  font-size: 1.2em;
+}
 .info .contato button {
   background: #33cc33;
 }
@@ -7278,7 +7281,7 @@ header .content .form h3 {
 .info .beta img {
   position: absolute;
   bottom: -462px;
-  left: 25px;
+  left: 75px;
   height: 585px;
 }
 .info .beta .content {
@@ -7287,6 +7290,10 @@ header .content .form h3 {
 }
 .info .beta .content h2 {
   color: #f2f2f2;
+  padding-bottom: 1.2em;
+}
+.info .beta .content p {
+  font-size: 1.6em;
 }
 .info .beta .content a {
   color: #f2f2f2;

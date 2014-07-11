@@ -154,6 +154,10 @@ header {
         padding: 2.4em 0;
         border-top: 5px solid #33cc33;
 
+        p {
+            font-size: 1.2em;
+        }
+
         button {
             background: #33cc33;
         }
@@ -171,7 +175,7 @@ header {
         img {
             position: absolute;
             bottom: -462px;
-            left: 25px;
+            left: 75px;
             height: 585px;
         }
 
@@ -179,7 +183,14 @@ header {
             color: #f2f2f2;
             padding: 2.4em 0;
 
-            h2 {color: #f2f2f2;}
+            h2 {
+                color: #f2f2f2;
+                padding-bottom: 1.2em;
+            }
+
+            p {
+                font-size: 1.6em;
+            }
 
             a {
                 color: #f2f2f2;
