@@ -1,6 +1,7 @@
 // ------------------------------
 //  MAIN PAGE
 // ------------------------------
+$button-radius: 0px;
 
 header {
     background: #33cc33;
@@ -104,6 +105,27 @@ header {
 
     h3 {
         color: #f2f2f2;
+    }
+
+    .pessoal {
+        padding: 2.4em 0;
+
+        h4 {
+            color: #228c22;
+
+            small {
+                margin-left: 5px;
+                color: #28a328;
+            }
+        }
+
+        p {
+            color: #f2f2f2;
+        }
+
+        a {
+            color: #228c22;
+        }
     }
 }
 

@@ -7226,6 +7226,22 @@ header .content .form h3 {
 .sobre h3 {
   color: #f2f2f2;
 }
+.sobre .pessoal {
+  padding: 2.4em 0;
+}
+.sobre .pessoal h4 {
+  color: #228c22;
+}
+.sobre .pessoal h4 small {
+  margin-left: 5px;
+  color: #28a328;
+}
+.sobre .pessoal p {
+  color: #f2f2f2;
+}
+.sobre .pessoal a {
+  color: #228c22;
+}
 
 .info .sistemas {
   background: red;
@@ -7279,14 +7295,6 @@ footer ul, footer li {
 footer ul a, footer li a {
   color: #ccc;
   font-weight: bold;
-}
-
-html, body {
-  height: 100%;
-}
-
-.off-canvas-wrap, .inner-wrap, .view-frame {
-  height: 100%;
 }
 
 .hidethis {
