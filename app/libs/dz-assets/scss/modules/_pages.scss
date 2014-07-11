@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5 {
 
 header {
     background: #33cc33;
-    height: 535px;
+    min-height: 535px;
     border-bottom: 5px solid #fff;
 
     .logo {
@@ -63,14 +63,18 @@ header {
 #usar {
 
     .header {
-        background: url(../img/usar01.png) no-repeat center center fixed;
+        background: url(http://res.cloudinary.com/digitalz/image/upload/v1405104818/usar01_hnkpdx.png) no-repeat top center;
         -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
         padding: 2.4em 0;
         border-bottom: 5px solid #fff;
         height: 350px;
+
+        img {
+            margin-top: 1.8em;
+        }
 
         p {
             padding: 1.2em 0;
@@ -96,7 +100,11 @@ header {
     }
 
     .funcionalidade {
-        background: black;
+        background: url(http://res.cloudinary.com/digitalz/image/upload/v1405106735/usar02_xmikbx.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         border-bottom: 5px solid #fff;
         padding: 2.4em 0;
         color: #f2f2f2;
@@ -145,7 +153,11 @@ header {
 .info {
 
     .sistemas {
-        background: red;
+        background: url(http://res.cloudinary.com/digitalz/image/upload/v1405104655/infos01_mufgep.png) no-repeat center center;
+        -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
         padding: 2.4em 0;
         border-bottom: 5px solid #fff;
 

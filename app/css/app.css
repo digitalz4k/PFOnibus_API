@@ -7150,7 +7150,7 @@ h1, h2, h3, h4, h5 {
 
 header {
   background: #33cc33;
-  height: 535px;
+  min-height: 535px;
   border-bottom: 5px solid #fff;
 }
 header .logo {
@@ -7191,7 +7191,7 @@ header .content .form h3 {
 }
 
 #usar .header {
-  background: url(../img/usar01.png) no-repeat center center fixed;
+  background: url(http://res.cloudinary.com/digitalz/image/upload/v1405104818/usar01_hnkpdx.png) no-repeat top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7199,6 +7199,9 @@ header .content .form h3 {
   padding: 2.4em 0;
   border-bottom: 5px solid #fff;
   height: 350px;
+}
+#usar .header img {
+  margin-top: 1.8em;
 }
 #usar .header p {
   padding: 1.2em 0;
@@ -7218,7 +7221,11 @@ header .content .form h3 {
   padding-bottom: 1.2em;
 }
 #usar .funcionalidade {
-  background: black;
+  background: url(http://res.cloudinary.com/digitalz/image/upload/v1405106735/usar02_xmikbx.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   border-bottom: 5px solid #fff;
   padding: 2.4em 0;
   color: #f2f2f2;
@@ -7255,7 +7262,11 @@ header .content .form h3 {
 }
 
 .info .sistemas {
-  background: red;
+  background: url(http://res.cloudinary.com/digitalz/image/upload/v1405104655/infos01_mufgep.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding: 2.4em 0;
   border-bottom: 5px solid #fff;
 }
@@ -7327,6 +7338,11 @@ footer ul a, footer li a {
   opacity: 0 !important;
 }
 
+@media all and (max-width: 340px) {
+  header .content .form {
+    margin-top: 0px !important;
+  }
+}
 /*!
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

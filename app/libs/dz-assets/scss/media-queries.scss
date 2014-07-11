@@ -28,5 +28,12 @@
 
 @media all and (max-width: 340px) {
 
+    header {
+        .content {
+            .form {
+                margin-top: 0px!important;
+            }
+        }
+    }
 
 }
