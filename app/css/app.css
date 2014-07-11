@@ -7143,19 +7143,134 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-.auth-container {
-  height: 100%;
-  margin-top: -45px;
-  background: url(https://s3.amazonaws.com/ooomf-com-files/4fjHtYHdRlSemICxjjBu_IMG_8424.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+header {
+  background: #33cc33;
+  height: 535px;
+  border-bottom: 5px solid #fff;
 }
-.auth-container .panel {
-  margin-top: 99px;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
+header .logo {
+  position: absolute;
+  top: 44px;
+  left: 22px;
+}
+header .content .screen {
+  margin-top: 44px;
+}
+header .content .form {
+  margin-top: 144px;
+}
+header .content .form h3 {
+  color: #f2f2f2;
+}
+
+#video {
+  position: relative;
+  padding: 2.4em 0;
+  border-top: 5px solid #33cc33;
+}
+#video .video-content {
+  width: 640px;
+  height: 360px;
+  background: #33cc33;
+}
+#video .video-content i {
+  color: #f2f2f2;
+  position: absolute;
+  margin: 150px 320px 180px 300px;
+}
+#video h2 {
+  color: #33cc33;
+}
+#video p {
+  color: #555;
+}
+
+#usar .header {
+  background: orange;
+  padding: 2.4em 0;
+  border-bottom: 5px solid #fff;
+  height: 350px;
+}
+#usar .etapas {
+  padding: 2.4em 0;
+  border-top: 5px solid #33cc33;
+}
+#usar .etapas p {
+  text-align: left;
+}
+#usar .etapas h2, #usar .etapas h5 {
+  color: #33cc33;
+}
+#usar .funcionalidade {
+  background: black;
+  border-bottom: 5px solid #fff;
+  padding: 2.4em 0;
+  color: #f2f2f2;
+}
+#usar .funcionalidade h2, #usar .funcionalidade h3 {
+  color: #f2f2f2;
+}
+
+.sobre {
+  background: #33cc33;
+  padding: 2.4em 0;
+}
+.sobre h3 {
+  color: #f2f2f2;
+}
+
+.info .sistemas {
+  background: red;
+  padding: 2.4em 0;
+  border-bottom: 5px solid #fff;
+}
+.info .sistemas h2 {
+  color: #fff;
+}
+.info .contato {
+  padding: 2.4em 0;
+  border-top: 5px solid #33cc33;
+}
+.info .contato a {
+  color: #fff;
+}
+.info .beta {
+  background: #33cc33;
+  padding: 2.4em 0;
+  color: #f2f2f2;
+  height: 500px;
+}
+.info .beta img {
+  position: absolute;
+  bottom: -461px;
+  left: 100px;
+  height: 585px;
+}
+.info .beta .content {
+  color: #f2f2f2;
+  padding: 2.4em 0;
+}
+.info .beta .content h2 {
+  color: #f2f2f2;
+}
+.info .beta .content a {
+  color: #f2f2f2;
+}
+
+footer {
+  height: 200px;
+  padding: 2.4em 0;
+}
+footer .logo2 {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+footer ul, footer li {
+  list-style-type: none;
+}
+footer ul a, footer li a {
+  color: #ccc;
+  font-weight: bold;
 }
 
 html, body {

@@ -2,25 +2,165 @@
 //  MAIN PAGE
 // ------------------------------
 
+header {
+    background: #33cc33;
+    height: 535px;
+    border-bottom: 5px solid #fff;
 
+    .logo {
+        position: absolute;
+        top: 44px;
+        left: 22px;
+    }
 
+    .content {
 
+        .screen {
+            margin-top: 44px;
+        }
 
-// ------------------------------
-//  LOGIN / SIGNUP
-// ------------------------------
-.auth-container {
-    height: 100%;
-    margin-top: -45px;
-    background: url(https://s3.amazonaws.com/ooomf-com-files/4fjHtYHdRlSemICxjjBu_IMG_8424.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+        .form {
+            margin-top: 144px;
 
-    .panel {
-        margin-top: 99px;
-        background: rgba(255,255,255,0.5);
-        border: none;
+            h3 {
+                color: #f2f2f2;
+            }
+        }
+    }
+}
+
+#video {
+    position: relative;
+    padding: 2.4em 0;
+    border-top: 5px solid #33cc33;
+
+    .video-content {
+        width: 640px;
+        height: 360px;
+        background: #33cc33;
+
+        i {
+            color: #f2f2f2;
+            position:absolute;
+            margin: 150px 320px 180px 300px;
+        }
+    }
+
+    h2 {
+            color: #33cc33;
+        }
+    p {
+        color: #555;
+    }
+}
+
+#usar {
+
+    .header {
+        background: orange;
+        padding: 2.4em 0;
+        border-bottom: 5px solid #fff;
+        height: 350px;
+    }
+
+    .etapas {
+        padding: 2.4em 0;
+        border-top: 5px solid #33cc33;
+
+        p {
+            text-align: left;
+        }
+
+        h2, h5 {
+            color: #33cc33;
+        }
+    }
+
+    .funcionalidade {
+        background: black;
+        border-bottom: 5px solid #fff;
+        padding: 2.4em 0;
+        color: #f2f2f2;
+
+        h2, h3 {
+            color: #f2f2f2;
+        }
+
+    }
+}
+
+.sobre {
+    background: #33cc33;
+    padding: 2.4em 0;
+
+    h3 {
+        color: #f2f2f2;
+    }
+}
+
+.info {
+
+    .sistemas {
+        background: red;
+        padding: 2.4em 0;
+        border-bottom: 5px solid #fff;
+
+        h2 {
+            color: #fff;
+        }
+    }
+
+    .contato {
+        padding: 2.4em 0;
+        border-top: 5px solid #33cc33;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    .beta {
+        background: #33cc33;
+        padding: 2.4em 0;
+        color: #f2f2f2;
+        height: 500px;
+
+        img {
+            position: absolute;
+            bottom: -461px;
+            left: 100px;
+            height: 585px;
+        }
+
+        .content {
+            color: #f2f2f2;
+            padding: 2.4em 0;
+
+            h2 {color: #f2f2f2;}
+
+            a {
+                color: #f2f2f2;
+            }
+
+        }
+    }
+}
+
+footer {
+    height: 200px;
+    padding: 2.4em 0;
+
+    .logo2 {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+
+    ul, li {
+        list-style-type: none;
+
+        a {
+            color: #ccc;
+            font-weight: bold;
+        }
     }
 }
