@@ -57,10 +57,19 @@ header {
 #usar {
 
     .header {
-        background: orange;
+        background: url(../img/usar01.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         padding: 2.4em 0;
         border-bottom: 5px solid #fff;
         height: 350px;
+
+        p {
+            padding: 1.2em 0;
+            color: #f2f2f2;
+        }
     }
 
     .etapas {
@@ -127,8 +136,8 @@ header {
 
         img {
             position: absolute;
-            bottom: -461px;
-            left: 100px;
+            bottom: -462px;
+            left: 25px;
             height: 585px;
         }
 
