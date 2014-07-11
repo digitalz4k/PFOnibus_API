@@ -7,7 +7,7 @@
 //
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+ $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "modules/functions";
@@ -23,7 +23,7 @@
 // $base-font-size: 100%;
 
 // The $base-font-size is 100% while $base-line-height is 150%
-// $base-line-height: 150%;
+ $base-line-height: 150%;
 
 // We use this to control whether or not CSS classes come through in the gem files.
 // $include-html-classes: true;
@@ -41,8 +41,8 @@
 // Global
 
 // We use these to control various global styles
-   $sans-font:         'Open Sans', sans-serif;
-   $serif-font:        'Roboto', serif;
+$sans-font:         'Open Sans', sans-serif;
+$serif-font:        'Roboto', serif;
 // $body-bg: #fff;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -50,7 +50,7 @@
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+ $font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;
@@ -58,7 +58,7 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #33cc33;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -66,8 +66,8 @@
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
- $global-radius: 0px;
- $global-rounded: 0px;
+ $global-radius: none !important;
+ $global-rounded: none !important;
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
@@ -351,15 +351,15 @@
 // $button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
-// $button-font-color: #fff;
-// $button-font-color-alt: #333;
+ $button-font-family: $serif-font;
+ $button-font-color: #fff;
+ $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
-// $button-font-align: center;
+ $button-font-weight: $font-weight-normal;
+ $button-font-align: center;
 
 // We use these to control various hover effects.
 // $button-function-factor: -20%;
@@ -371,8 +371,8 @@
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
 
 // We use this to set the default radius used throughout the core.
- $button-radius: 0px;
- $button-round: 0px;
+ $button-radius: none!important;
+ $button-round: none!important;
 
 // We use this to set default opacity for disabled buttons.
 // $button-disabled-opacity: 0.7;
