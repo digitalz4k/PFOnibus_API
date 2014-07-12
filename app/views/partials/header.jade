@@ -1,4 +1,17 @@
-nav.topbar
-    section.right.topbar-section
-        h1.title(ng-hide="currentUser") PFÔNIBUS
-        h1.title(ng-show='currentUser') {{ currentUser.name }}
+.navbar.navbar-default.navbar-static-top(role="navigation", bs-navbar)
+    .navbar-header
+        a.navbar-brand(href="/") PFÔnibus
+        ul.nav.navbar-nav
+            li(data-match-route="/$")
+                a(href="/") Home
+            li(data-match-route="/add")
+                a(href="/add") Add
+        ul.nav.navbar-nav.pull-right(ng-if="!currentUser")
+            li(data-match-route="/login")
+                a(href="/login") Login
+            li(data-match-route="/signup")
+                a(href="/signup") Sign up
+        ul.nav.navbar-nav.pull-right(ng-if="currentUser")
+            li.navbar-text(ng-bind="currentUser.email")
+            li
+                a(href="javascript:void(0)", ng-click="logout()") Logout

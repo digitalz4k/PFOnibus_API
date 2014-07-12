@@ -1,7 +1,7 @@
 div(ng-include='\'partials/header\'')
-.auth-container
+#auth-container
   .row
-    .small-6.columns.panel.radius.right
+    .small-6.small-centered.columns.panel.radius
       form.form(name='form', ng-submit='register(form)', novalidate='')
         .form-group(ng-class='{ \'has-success\': form.name.$valid && submitted, \'has-error\': form.name.$invalid && submitted }')
           label Name
@@ -29,7 +29,7 @@ div(ng-include='\'partials/header\'')
 
         button.button.expand.button-primary(type='submit') Sign up
   .row
-    .small-6.columns.right.text-center
+    .small-6.small-centered.columns
       h5
         small Have an account? 
         a.text-center.new-account(href='/login') Log in

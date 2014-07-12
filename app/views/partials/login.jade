@@ -1,7 +1,7 @@
 div(ng-include='\'partials/header\'')
-.auth-container
+#auth-container
   .row
-    .small-6.columns.panel.radius.right
+    .small-6.small-centered.columns.panel.radius
       form.form(name='form', ng-submit='login(form)', novalidate='novalidate')
 
         .form-group
@@ -21,7 +21,7 @@ div(ng-include='\'partials/header\'')
         span.clearfix
 
   .row
-    .small-6.columns.right.text-center
+    .small-6.small-centered.columns
       h5
         small Not registered? 
         a.text-center.new-account(href='/signup') Create an account.

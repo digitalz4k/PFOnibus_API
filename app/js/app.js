@@ -3,7 +3,8 @@ angular.module('pfoApp', [
   'ngRoute',
   'ngAnimate',
   'ngResource',
-  'ngSanitize'
+  'ngSanitize',
+  'mgcrea.ngStrap'
   ])
 
 .config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
