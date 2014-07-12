@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('pfoApp')
     .factory('Api', ['$resource', function($resource){
         return {

@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('pfoApp')
   .directive('mongooseError', function () {
     return {

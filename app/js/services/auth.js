@@ -1,7 +1,5 @@
-'use strict';
-
 angular.module('pfoApp')
-  .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
+  .factory('Auth', ['$location', '$rootScope', 'Session', 'User', '$cookieStore', function Auth($location, $rootScope, Session, User, $cookieStore) {
 
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
@@ -108,4 +106,4 @@ angular.module('pfoApp')
         return !!user;
       },
     };
-  });
+  }]);

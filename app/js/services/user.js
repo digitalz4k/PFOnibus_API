@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pfoApp')
-  .factory('User', function ($resource) {
+  .factory('User', ['$resource', function ($resource) {
     return $resource('/api/v1/users/:id', {
       id: '@id'
     }, { //parameters default
@@ -16,4 +16,4 @@ angular.module('pfoApp')
         }
       }
 	  });
-  });
+  }]);

@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('pfoApp', [
   'ngCookies',
   'ngRoute',
@@ -8,7 +6,9 @@ angular.module('pfoApp', [
   'ngSanitize'
   ])
 
-.config(function ($routeProvider, $locationProvider, $httpProvider) {
+.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
+    $locationProvider.html5Mode(true);
+
     $routeProvider.
       when('/', {
         templateUrl: 'partials/main',
@@ -31,8 +31,6 @@ angular.module('pfoApp', [
         redirectTo:'/'
       });
 
-      $locationProvider.html5Mode(true);
-
     $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
       return {
         'responseError': function(response) {
@@ -46,8 +44,8 @@ angular.module('pfoApp', [
         }
       };
     }]);
-  })
-  .run(function ($rootScope, $location, Auth) {
+  }])
+  .run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
 
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
@@ -56,4 +54,4 @@ angular.module('pfoApp', [
         $location.path('/login');
       }
     });
-  });
+  }]);

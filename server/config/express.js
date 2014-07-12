@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express'),
-    favicon = require('serve-favicon'),
+    favicon = require('static-favicon'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
@@ -13,14 +13,16 @@ var express = require('express'),
     config = require('./config'),
     passport = require('passport'),
     flash = require('connect-flash'),
+    compress = require('compression'),
     mongoStore = require('connect-mongo')(session);
 
 /**
  * Express configuration
  */
 module.exports = function(app) {
+    app.use(compress())
     app.use(cors());
-    app.use(favicon(__dirname + '../../../app/img/favicon.ico'));
+    app.use(favicon());
     app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'app')));
     app.set('views', config.root + '/app/views');
