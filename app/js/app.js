@@ -30,7 +30,8 @@ angular.module('pfoApp', [
       }).
       when('/beta', {
         templateUrl: 'partials/landing/betasuccess',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        authenticate: true
       }).
       otherwise({
         redirectTo:'/'
