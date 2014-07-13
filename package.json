@@ -9,8 +9,7 @@
     "npm": "1.2.x"
   },
   "scripts": {
-    "start": "./node_modules/.bin/nodemon server.js",
-    "postinstall": "node node_modules/bower/bin/bower install"
+    "start": "./node_modules/.bin/nodemon server.js"
   },
   "author": "Leonardo da Silva",
   "dependencies": {
