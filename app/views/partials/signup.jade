@@ -1,35 +1,34 @@
 div(ng-include='\'partials/header\'')
 #auth-container
   .row
-    .small-6.small-centered.columns.panel.radius
+    .small-12.medium-6.large-7.columns
+                img(src="http://res.cloudinary.com/digitalz/image/upload/v1405104864/screen_izeevx.png", alt="Os Passo Fundenses podem consultar as linhas de ônibus com seus celulares no IOS, Android e Windows Fone.", class="screen")
+    .small-12.medium-6.large-5.columns.panel.radius.right
+      p.text-center Crie uma conta para participar da versão Beta
       form.form(name='form', ng-submit='register(form)', novalidate='')
         .form-group(ng-class='{ \'has-success\': form.name.$valid && submitted, \'has-error\': form.name.$invalid && submitted }')
-          label Name
+          label Nome
           input.form-control(type='text', name='name', ng-model='user.name', required='')
           p.help-block(ng-show='form.name.$error.required && submitted')
-            | A name is required
+            | O nome é obrigatorio
 
         .form-group(ng-class='{ \'has-success\': form.email.$valid && submitted, \'has-error\': form.email.$invalid && submitted }')
           label Email
           input.form-control(type='email', name='email', ng-model='user.email', required='', mongoose-error='')
           p.help-block(ng-show='form.email.$error.email && submitted')
-            | Doesn't look like a valid email.
+            | Digite um endereço de e-mail válido.
           p.help-block(ng-show='form.email.$error.required && submitted')
-            | What's your email address?
+            | O que é seu endereço de email?
           p.help-block(ng-show='form.email.$error.mongoose')
             | {{ errors.email }}
 
         .form-group(ng-class='{ \'has-success\': form.password.$valid && submitted, \'has-error\': form.password.$invalid && submitted }')
-          label Password
+          label Senha
           input.form-control(type='password', name='password', ng-model='user.password', ng-minlength='3', required='', mongoose-error='')
           p.help-block(ng-show='(form.password.$error.minlength || form.password.$error.required) && submitted')
-            | Password must be at least 3 characters.
+            | Senha tem pelos menos três caracteres.
           p.help-block(ng-show='form.password.$error.mongoose')
             | {{ errors.password }}
 
-        button.button.expand.button-primary(type='submit') Sign up
-  .row
-    .small-6.small-centered.columns
-      h5
-        small Have an account? 
-        a.text-center.new-account(href='/login') Log in
+        button.button.expand.alert(type='submit') Cadastre-se
+div(ng-include='\'partials/landing/footer\'')

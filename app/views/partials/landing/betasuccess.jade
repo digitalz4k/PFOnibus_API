@@ -1,0 +1,20 @@
+div(ng-include='\'partials/header\'')
+#auth-container
+  .row
+    .small-10.small-centered.columns
+      h3 Parabéns, você está cadastrado! Informaremos assim que estiver disponível.
+  .row
+    .small-6.small-centered.columns.social
+      h5.text-center Junte-se a nós nas redes sociais
+      ul.small-block-grid-3.social-logo
+        li.facebook
+          a(href="https://www.facebook.com/pfonibus")
+            img(src="img/social_fb.png", alt="Pagina Facebook do PFÔnibus")
+        li.twitter
+          a(href="https://www.twitter.com/pfonibus")
+            img(src="img/social_tt.png", alt="Twitter do PFÔnibus")
+        li.instagram
+          a(href="https://www.instagram.com/pfonibus")
+            img(src="img/social_insta.png", alt="Instagram do PFÔnibus")
+      a(href="/", class="right") Voltar
+div(ng-include='\'partials/landing/footer\'')

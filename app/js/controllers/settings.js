@@ -1,5 +1,10 @@
 angular.module('pfoApp')
   .controller('SettingsCtrl', ['$scope', 'User', 'Auth', function ($scope, User, Auth) {
+    $scope.userId = User.id;
+    $scope.name = User.name;
+    $scope.role = User.role;
+    $scope.email = User.email;
+
     $scope.errors = {};
 
     $scope.changePassword = function(form) {

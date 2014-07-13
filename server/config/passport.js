@@ -34,12 +34,12 @@ passport.use(new LocalStrategy({
 
       if (!user) {
         return done(null, false, {
-          message: 'This email is not registered.'
+          message: 'Não existe conta com o endereço de email.'
         });
       }
       if (!user.authenticate(password)) {
         return done(null, false, {
-          message: 'This password is not correct.'
+          message: 'A senha está errada.'
         });
       }
       return done(null, user);

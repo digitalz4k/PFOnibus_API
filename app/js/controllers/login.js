@@ -13,7 +13,7 @@ angular.module('pfoApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/beta');
         })
         .catch( function(err) {
           err = err.data;

@@ -23,10 +23,14 @@ angular.module('pfoApp', [
         templateUrl: 'partials/signup',
         controller: 'SignupCtrl'
       }).
-      when('/settings', {
+      when('/dashboard', {
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
         authenticate: true
+      }).
+      when('/beta', {
+        templateUrl: 'partials/landing/betasuccess',
+        controller: 'MainCtrl'
       }).
       otherwise({
         redirectTo:'/'

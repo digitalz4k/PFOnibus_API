@@ -5,5 +5,37 @@
 #auth-container {
 
     padding: 2.4em 0;
+    background: #33cc33;
+
+    h3 {
+        color: #f2f2f2;
+    }
+
+    a {
+        color: $alert-color;
+    }
+
+    .social {
+        padding: 2.4em 0;
+
+        h5 {
+            color: #009900;
+            padding: 2.4em 0;
+        }
+
+        .social-logo {
+
+            .facebook a {
+                color: #3B5998;
+            }
+            .twitter a {
+                color: #9ae4e8;
+            }
+            .instagram a {
+                color: #3f729b;
+            }
+        }
+
+    }
 
 }

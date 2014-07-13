@@ -27,9 +27,22 @@ header {
 
         .form {
             margin-top: 144px;
+            color: #fff;
 
             h3 {
                 color: #f2f2f2;
+            }
+
+            .betaform {
+                margin-top: 1.2em;
+
+                .button {
+                     a {
+                        font-size: 1.6em;
+                        color: #f2f2f2;
+                        line-height: 1.6em;
+                    }
+                }
             }
         }
     }
