@@ -1,7 +1,6 @@
 'use strict';
 
 var express = require('express'),
-    favicon = require('static-favicon'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
@@ -22,7 +21,6 @@ var express = require('express'),
 module.exports = function(app) {
     app.use(compress())
     app.use(cors());
-    app.use(favicon());
     app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'app')));
     app.set('views', config.root + '/app/views');

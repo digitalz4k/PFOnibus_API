@@ -30,7 +30,7 @@
     "cookie-parser": "^1.1.0",
     "express-session": "^1.2.1",
     "compression": "^1.0.8",
-    "static-favicon": "^2.0.0-alpha"
+     "static-favicon": "~1.0.0"
   },
   "devDependencies": {
     "matchdep": "^0.3.0",
