@@ -4,6 +4,16 @@ var mongoose = require('mongoose'),
     User = mongoose.model('User'),
     passport = require('passport');
 
+exports.list = function(req, res, next) {
+  User.find(function(err, user) {
+        if(!err) {
+        console.log('GET /api/v1/users')
+            res.send(user);
+        } else {
+            console.log('ERROR: ' + err);
+        }
+    });
+}
 /**
  * Create user
  */

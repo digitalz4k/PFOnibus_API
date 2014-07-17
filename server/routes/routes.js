@@ -18,6 +18,7 @@ module.exports = function(app) {
     .delete(api.deleteTodo)
 
   app.route('/api/v1/users')
+    .get(users.list)
     .post(users.create)
     .put(users.changePassword);
   app.route('/api/v1/users/me')
