@@ -20,7 +20,7 @@ var express = require('express'),
  */
 module.exports = function(app) {
     app.use(compress())
-    app.use(require('prerender-node'));
+    app.use(require('prerender-node').set('prerenderToken', 'HcRXuPzPc0wttPUNedzW'));
     app.use(cors());
     app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'app')));
