@@ -68,6 +68,22 @@ exports.changePassword = function(req, res, next) {
 };
 
 /**
+* Delete User
+*/
+exports.delete = function(req, res) {
+    var userId = req.params.id;
+
+    User.findById(userId, function(err, user) {
+        if (!err && user){
+          user.remove();
+          res.json(200, {message: "User removed."});
+        } else {
+            res.json(403, {message: "Could not delete user. " + err});
+          }
+    });
+  };
+
+/**
  * Get current user
  */
 exports.me = function(req, res) {

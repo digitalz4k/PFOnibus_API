@@ -20,11 +20,12 @@ module.exports = function(app) {
   app.route('/api/v1/users')
     .get(users.list)
     .post(users.create)
-    .put(users.changePassword);
+    .put(users.changePassword)
   app.route('/api/v1/users/me')
-    .get(users.me);
+    .get(users.me)
   app.route('/api/v1/users/:id')
-    .get(users.show);
+    .get(users.show)
+    .delete(users.delete)
 
   app.route('/api/v1/session')
     .post(session.login)
