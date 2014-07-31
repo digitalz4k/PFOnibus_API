@@ -27,15 +27,14 @@ module.exports = function(app) {
 * LINES ROUTES
 */
 
-/*
   app.route('/api/v1/companhias/:companhiaID/linhas')
     .get(linha.findAllLines)
     .post(linha.addLine)
 
   app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID')
     .get(linha.findById)
+    .put(linha.updateLine)
     .delete(linha.deleteLine)
-*/
 
 /*
 * USERS ROUTES

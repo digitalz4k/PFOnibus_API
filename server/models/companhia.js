@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    LinhaSchema = require('./linha'),
     Schema = mongoose.Schema;
 
 var CompanhiaSchema = new Schema({
@@ -10,7 +11,7 @@ var CompanhiaSchema = new Schema({
     email: {type: String, default: "Contact email"},
     phone: {type: String, default: "Phone number"},
     website: {type: String, default: "Company website"},
-    linhas: [ { type: mongoose.Schema.ObjectId, ref:'Linha' } ],
+    linhas: [ { type: mongoose.Schema.ObjectId, ref: 'Linha' } ],
     createdOn: { type: Date, default: Date.now },
     modifiedOn: { type: Date, default: Date.now },
 });
