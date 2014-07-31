@@ -1,22 +1,45 @@
 'use strict';
 
-var api = require('./lib/api'),
-    index = require('./lib'),
+var companhia = require('./lib/companhias'),
+    linha = require('./lib/linhas'),
     users = require('./lib/users'),
+    index = require('./lib'),
     session = require('./lib/session'),
     middleware = require('./middleware');
 
 module.exports = function(app) {
 
-// API Routing
-  app.route('/api/v1/todos')
-    .get(api.findAllTodos)
-    .post(api.addTodo)
+//////////////////////// API Routing ///////////////////////////////
 
-  app.route('/api/v1/todos/:id')
-    .get(api.findById)
-    .delete(api.deleteTodo)
+/*
+* COMPANIES ROUTES
+*/
+  app.route('/api/v1/companhias')
+    .get(companhia.findAllCompanies)
+    .post(companhia.addCompany)
 
+  app.route('/api/v1/companhias/:companhiaID')
+    .get(companhia.findById)
+    .put(companhia.updateById)
+    .delete(companhia.deleteCompany)
+
+/*
+* LINES ROUTES
+*/
+
+/*
+  app.route('/api/v1/companhias/:companhiaID/linhas')
+    .get(linha.findAllLines)
+    .post(linha.addLine)
+
+  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID')
+    .get(linha.findById)
+    .delete(linha.deleteLine)
+*/
+
+/*
+* USERS ROUTES
+*/
   app.route('/api/v1/users')
     .get(users.list)
     .post(users.create)
@@ -27,17 +50,26 @@ module.exports = function(app) {
     .get(users.show)
     .delete(users.delete)
 
+/*
+* SESSIONS ROUTES
+*/
+
   app.route('/api/v1/session')
     .post(session.login)
     .delete(session.logout);
 
-// All undefined api routes should return a 404
+/*
+* ERROR 404 ROUTE
+*/
   app.route('/api/v1/*')
     .get(function(req, res) {
       res.send(404);
     });
 
-  // All other routes to use Angular routing in app/scripts/app.js
+/*
+* CLIENT ROUTES
+* All others routes to AngularJS
+*/
   app.route('/partials/*')
     .get(index.partials);
   app.route('/*')

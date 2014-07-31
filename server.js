@@ -13,11 +13,9 @@ var express = require('express'),
 var config = require('./server/config/config');
 var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
-var modelsPath = path.join(__dirname, 'server/models');
-fs.readdirSync(modelsPath).forEach(function (file) {
-  if (/(.*)\.(js$|coffee$)/.test(file)) {
-    require(modelsPath + '/' + file);
-  }
+var models_path = __dirname + '/server/models'
+fs.readdirSync(models_path).forEach(function (file) {
+  require(models_path+'/'+file)
 });
 
 // Passport Configuration ==============================================================
