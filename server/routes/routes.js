@@ -2,6 +2,8 @@
 
 var companhia = require('./lib/companhias'),
     linha = require('./lib/linhas'),
+    parada = require('./lib/paradas'),
+    horario = require('./lib/horarios'),
     users = require('./lib/users'),
     index = require('./lib'),
     session = require('./lib/session'),
@@ -19,7 +21,6 @@ module.exports = function(app) {
     .post(companhia.addCompany)
 
   app.route('/api/v1/companhias/:companhiaID')
-    .get(companhia.findById)
     .put(companhia.updateById)
     .delete(companhia.deleteCompany)
 
@@ -35,6 +36,33 @@ module.exports = function(app) {
     .get(linha.findById)
     .put(linha.updateLine)
     .delete(linha.deleteLine)
+
+/*
+* BUS STATIONS ROUTES
+*/
+  app.route('/api/v1/paradas')
+    .get(parada.findAllStations)
+
+  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/')
+    //.get(parada.findAllStationsById)
+    .post(parada.addStation)
+
+  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID')
+    .get(parada.findById)
+    .put(parada.updateStation)
+    .delete(parada.deleteStation)
+
+/*
+* SCHEDULES ROUTES
+*/
+  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID/horarios/:typeID')
+    .get(horario.findAllSchedulesByType)
+    .post(horario.addSchedule)
+
+  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID/horarios/:horarioID')
+    .put(horario.updateSchedule)
+    .delete(horario.deleteSchedule)
+
 
 /*
 * USERS ROUTES

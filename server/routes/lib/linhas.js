@@ -2,6 +2,7 @@
 
 var mongoose = require('mongoose'),
     Company = mongoose.model('Companhia'),
+    Station = mongoose.model('Parada'),
     Line = mongoose.model('Linha');
 
 var url = "/api/v1";
@@ -10,23 +11,25 @@ var url = "/api/v1";
   exports.findAllLines = function(req, res) {
     console.log("Find all line from companhiaID: " + req.params.companhiaID);
     Company
-    .findById(req.params.companhiaID)
-    .populate('linhas')
-    .exec(
-        function(err, line){
-            if(err){
-                    console.log('ERROR: ' + err);
-            } else {
-                Line.find(function(err, line) {
-                    if(!err) {
-                        console.log('GET ' + url + '/companhias' + req.params.companhiaID + '/linhas/');
-                        res.send(line);
-                    } else {
+        .findById(req.params.companhiaID)
+        .exec(
+            function(err, line){
+                if(err){
                         console.log('ERROR: ' + err);
-                    }
-                });
-        }
-    });
+                } else {
+                    Line.find()
+                    .populate('paradas', 'paradaNome')
+                    .exec(
+                        function(err, line){
+                        if(!err) {
+                            console.log('GET ' + url + '/companhias' + req.params.companhiaID + '/linhas/');
+                            res.send(line);
+                        } else {
+                            console.log('ERROR: ' + err);
+                        }
+                    });
+            }
+        });
   };
 
 //POST - Insert a new line in the DB
@@ -72,10 +75,20 @@ var url = "/api/v1";
     Line
     .findById(req.params.linhaID)
     .populate('companhia', 'companyName companyLogo')
+    .populate('paradas', 'paradaNome paradaLongitude paradaLatitude isShow horarios')
     .exec(
         function(err, line) {
             if(!err) {
-            console.log('GET ' + url + '/companhias/' + req.params.companhiaID + '/linhas/' + req.params.linhaID);
+                var opts = [
+                  { path: 'week', model: 'Horario' }
+                ];
+                Station.populate(line, opts, function(err, docs2) {
+                  if(err){
+                        console.log(err);
+                  }
+                  console.log(docs2);
+                });
+                console.log('GET ' + url + '/companhias/' + req.params.companhiaID + '/linhas/' + req.params.linhaID);
                 res.send(line);
             } else {
                 console.log('ERROR: ' + err);

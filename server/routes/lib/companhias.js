@@ -10,6 +10,7 @@ var url = "/api/v1";
     Company
     .find()
     .populate('linhas', 'lineName lineNumber')
+    .sort('name')
     .exec(
         function(err, company) {
           if(!err) {
@@ -44,22 +45,6 @@ var url = "/api/v1";
     });
 
     res.send(company);
-  };
-
-//GET - Return a Company with specified ID
-  exports.findById = function(req, res) {
-    Company
-    .findById(req.params.companhiaID)
-    .populate('linhas', 'lineName lineNumber')
-    .exec(
-        function(err, company) {
-          if(!err) {
-          console.log('GET ' + url + '/companhias/' + req.params.companhiaID);
-              res.send(company);
-          } else {
-              console.log('ERROR: ' + err);
-          }
-      });
   };
 
 //PUT - Update a company with specified ID
