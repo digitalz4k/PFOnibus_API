@@ -3,6 +3,8 @@
 var mongoose = require('mongoose'),
     Company = mongoose.model('Companhia'),
     Line = mongoose.model('Linha'),
+    Tempo = mongoose.model('Tempo'),
+    Horario = mongoose.model('Horario'),
     Station = mongoose.model('Parada');
 
 var url = "/api/v1";
@@ -16,11 +18,29 @@ var url = "/api/v1";
     .exec(
         function(err, line) {
             if(!err) {
-                    Station.populate(line, 'horarios', function (err, line) {
+                    var opts = {
+                        path: 'paradas.horarios',
+                        select: 'line def saturday week',
+                        model: 'Tempo'
+                    };
+
+                    Line.populate(line, opts, function (err, line) {
                         console.log(line);
+                        console.log('GET ' + url + '/linhas' + req.params.linhaID);
+                        //res.send(line);
                     });
-                    console.log('GET ' + url + '/linhas' + req.params.linhaID);
+
+                    var options = {
+                      parth: 'horarios.week',
+                      model: 'Horario'
+                    };
+
+                    Line.populate(line, options, function (err, line) {
+                      console.log(line);
+                    });
+
                     res.send(line);
+
             } else {
                 console.log('ERROR: ' + err);
             }

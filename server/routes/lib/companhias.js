@@ -10,7 +10,6 @@ var url = "/api/v1";
   exports.findAllCompanies = function(req, res) {
     Company
     .find()
-    .lean()
     .populate('linhas', 'lineName lineNumber', null, { sort: { 'lineNumber': 1 } })
     .exec(
         function(err, company) {
