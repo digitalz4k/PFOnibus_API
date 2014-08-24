@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
+    Line = mongoose.model('Linha'),
     Company = mongoose.model('Companhia');
 
 var url = "/api/v1";

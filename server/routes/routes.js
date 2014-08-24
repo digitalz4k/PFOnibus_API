@@ -3,6 +3,7 @@
 var companhia = require('./lib/companhias'),
     linha = require('./lib/linhas'),
     parada = require('./lib/paradas'),
+    tempo = require('./lib/tempos'),
     horario = require('./lib/horarios'),
     users = require('./lib/users'),
     index = require('./lib'),
@@ -39,25 +40,29 @@ module.exports = function(app) {
 */
   app.route('/api/v1/paradas')
     .get(parada.findAllStations)
-
-  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/')
-/*    .get(parada.findAllStationsById)  */
     .post(parada.addStation)
 
-  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID')
+  app.route('/api/v1/paradas/:paradaID')
     .get(parada.findById)
     .put(parada.updateStation)
     .delete(parada.deleteStation)
 
 /*
+* TIMES GROUP ROUTES
+*/
+  app.route('/api/v1/paradas/:paradaID/tempos/')
+    .post(tempo.addTime)
+
+  app.route('/api/v1/paradas/:paradaID/tempos/:tempoID')
+    .delete(tempo.deleteTime)
+
+/*
 * SCHEDULES ROUTES
 */
-  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID/horarios/:typeID')
-    .get(horario.findAllSchedulesByType)
+  app.route('/api/v1/tempos/:tempoID/horarios/:typeID')
     .post(horario.addSchedule)
 
-  app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID/horarios/:horarioID')
-    .put(horario.updateSchedule)
+  app.route('/api/v1/tempos/:tempoID/horarios/:horarioID')
     .delete(horario.deleteSchedule)
 
 

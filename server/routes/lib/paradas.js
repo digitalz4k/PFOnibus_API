@@ -13,7 +13,7 @@ exports.findAllStations = function(req, res){
     console.log("Lista de paradas");
     Station
         .find()
-        .populate('lines', 'lineNome lineNumber')
+        .populate('horarios', 'line')
         .sort('paradaNome')
         .exec(
             function(err, parada){
@@ -26,34 +26,6 @@ exports.findAllStations = function(req, res){
             });
 };
 
-//GET - Return all stations from the line ID
-  exports.findAllStationsById = function(req, res) {
-    console.log("Find all stations from lineID: " + req.params.linhaID);
-    Line
-        .findById(req.params.linhaID)
-        .populate('paradas', 'paradaNome paradaLongitude paradaLatitude isShow')
-        .exec(
-            function(err, station){
-                if(err){
-                        console.log('ERROR: ' + err);
-                } else {
-                Station
-                .find()
-                .populate('horarios.week horarios.saturday horarios.def', 'sentido startTime')
-                .exec(
-                    function(err, station) {
-                        if(!err) {
-                            console.log('GET ' + url + '/linhas' + req.params.linhaID + '/paradas/');
-                            res.send(station);
-                        } else {
-                            console.log('ERROR: ' + err);
-                        }
-                    });
-            }
-        });
-  };
-
-
 //POST - Create a new Bus Stations
 exports.addStation = function(req, res){
     console.log("POST");
@@ -63,7 +35,6 @@ exports.addStation = function(req, res){
         paradaNome: req.body.paradaNome,
         paradaLongitude: req.body.paradaLongitude,
         paradaLatitude: req.body.paradaLatitude,
-        line: req.params.linhaID,
         isShow: req.body.isShow
     });
 
@@ -77,21 +48,6 @@ exports.addStation = function(req, res){
         }
     );
 
-    Line.findById(req.params.linhaID, function(err, linha){
-        var paradaId = station._id;
-        linha.paradas.push(paradaId);
-        linha.modifiedOn = Date.now();
-
-        linha.save(function(err){
-            if(!err){
-                console.log("Parada: " + req.body.paradaNome + ' added to line: ' + linha.lineName);
-                console.log(linha);
-            } else {
-                console.log('ERROR: ' + err);
-            }
-        });
-    });
-
     res.send(station);
 
 };
@@ -103,7 +59,7 @@ exports.findById = function(req, res){
 
    Station
     .findById(req.params.paradaID)
-    .populate('horarios.week horarios.saturday horarios.def', 'sentido startTime')
+    .populate('horarios')
     .exec(
         function(err, parada){
             if(!err){
