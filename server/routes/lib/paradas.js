@@ -25,20 +25,23 @@ exports.findAllStations = function(req, res){
                 }
             });
 };
-/*
+
 //GET - Return all stations from the line ID
   exports.findAllStationsById = function(req, res) {
     console.log("Find all stations from lineID: " + req.params.linhaID);
     Line
         .findById(req.params.linhaID)
         .populate('paradas', 'paradaNome paradaLongitude paradaLatitude isShow')
-        .populate('horarios.week')
         .exec(
             function(err, station){
                 if(err){
                         console.log('ERROR: ' + err);
                 } else {
-                    Station.find(function(err, station) {
+                Station
+                .find()
+                .populate('horarios.week horarios.saturday horarios.def', 'sentido startTime')
+                .exec(
+                    function(err, station) {
                         if(!err) {
                             console.log('GET ' + url + '/linhas' + req.params.linhaID + '/paradas/');
                             res.send(station);
@@ -49,7 +52,7 @@ exports.findAllStations = function(req, res){
             }
         });
   };
-*/
+
 
 //POST - Create a new Bus Stations
 exports.addStation = function(req, res){

@@ -7,89 +7,20 @@ var mongoose = require('mongoose'),
 
 var url = "/api/v1";
 
-//GET - Return all lines from the company ID
-  exports.findAllLines = function(req, res) {
-    console.log("Find all line from companhiaID: " + req.params.companhiaID);
-    Company
-        .findById(req.params.companhiaID)
-        .exec(
-            function(err, line){
-                if(err){
-                        console.log('ERROR: ' + err);
-                } else {
-                    Line.find()
-                    .populate('paradas', 'paradaNome')
-                    .exec(
-                        function(err, line){
-                        if(!err) {
-                            console.log('GET ' + url + '/companhias' + req.params.companhiaID + '/linhas/');
-                            res.send(line);
-                        } else {
-                            console.log('ERROR: ' + err);
-                        }
-                    });
-            }
-        });
-  };
-
-//POST - Insert a new line in the DB
-  exports.addLine = function(req, res) {
-    console.log('POST');
-    console.log(req.body);
-
-    var line = new Line({
-        lineName: req.body.lineName,
-        lineNumber: req.body.lineNumber,
-        lineDescription: req.body.lineDescription,
-        companhia: req.params.companhiaID
-    });
-
-    line.save(function(err) {
-        if(!err) {
-            console.log('Created a new line: ' + req.body.lineName);
-        } else {
-            console.log('ERROR: ' + err);
-        }
-    });
-
-    Company.findById(req.params.companhiaID, function(err, companhia){
-        var lineId = line._id;
-        companhia.linhas.push(lineId);
-        companhia.modifiedOn = Date.now();
-
-        companhia.save(function(err){
-            if(!err){
-                console.log("Linha: " + req.body.lineName + ' added to company: ' + companhia.companyName);
-                console.log(companhia);
-            } else {
-                console.log('ERROR: ' + err);
-            }
-        });
-    });
-
-    res.send(line);
-  };
-
 //GET - Return a Line with specified ID
   exports.findById = function(req, res) {
     Line
     .findById(req.params.linhaID)
     .populate('companhia', 'companyName companyLogo')
-    .populate('paradas', 'paradaNome paradaLongitude paradaLatitude isShow horarios')
+    .populate('paradas', 'paradaNome paradaLongitude paradaLatitude isShow horarios', null, { sort: { 'paradaNome': 1 } })
     .exec(
         function(err, line) {
             if(!err) {
-                var opts = [
-                  { path: 'week', model: 'Horario' }
-                ];
-                Station.populate(line, opts, function(err, docs2) {
-                  if(err){
-                        console.log(err);
-                  }
-                  console.log(docs2);
-                });
-                console.log('GET ' + url + '/companhias/' + req.params.companhiaID + '/linhas/' + req.params.linhaID);
-                res.send(line);
+                    Station.populate(line, 'week', function (err, line) {
+                        console.log(line.paradas.horarios);
+                    });
+                    console.log('GET ' + url + '/linhas' + req.params.linhaID);
+                    res.send(line);
             } else {
                 console.log('ERROR: ' + err);
             }

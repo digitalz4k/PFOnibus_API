@@ -21,17 +21,14 @@ module.exports = function(app) {
     .post(companhia.addCompany)
 
   app.route('/api/v1/companhias/:companhiaID')
+    .get(companhia.findAllLines)
+    .post(companhia.addLine)
     .put(companhia.updateById)
     .delete(companhia.deleteCompany)
 
 /*
 * LINES ROUTES
 */
-
-  app.route('/api/v1/companhias/:companhiaID/linhas')
-    .get(linha.findAllLines)
-    .post(linha.addLine)
-
   app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID')
     .get(linha.findById)
     .put(linha.updateLine)
@@ -44,7 +41,7 @@ module.exports = function(app) {
     .get(parada.findAllStations)
 
   app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/')
-    //.get(parada.findAllStationsById)
+/*    .get(parada.findAllStationsById)  */
     .post(parada.addStation)
 
   app.route('/api/v1/companhias/:companhiaID/linhas/:linhaID/paradas/:paradaID')
